@@ -125,9 +125,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  // check if the button is pressed
 	  if (MyButtonPressed == GPIO_PIN_SET){
-/*		  if ( HAL_UART_Transmit(&huart1, (uint8_t*)"button pressed\r\n", 16, 0xFFFF) != HAL_OK ) {
+		  if ( HAL_UART_Transmit(&huart1, (uint8_t*)"button pressed\r\n", 16, 0xFFFF) != HAL_OK ) {
 			  Error_Handler();
-		  }*/
+		  }
 		  // if button is pressed, toggle the green LED on pin 13
 		  HAL_GPIO_TogglePin (LD3_GPIO_Port, LD3_Pin);
 		  HAL_GPIO_TogglePin (LD4_GPIO_Port, LD4_Pin);
@@ -141,13 +141,7 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-// function that handles the interrupts on pin PA1 - user button on the board
-void HandleMyButtonInterrupt(void){
 
-	// set the global variable when button is pressed
-	MyButtonPressed = GPIO_PIN_SET;
-
-}
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -545,6 +539,17 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+// function that handles the interrupts on pin PA1 - user button on the board
+//void HandleMyButtonInterrupt(void){
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+
+	if (GPIO_Pin == B1_Pin){
+		// set the global variable when button is pressed
+		MyButtonPressed = GPIO_PIN_SET;
+	}
+
+}
 
 /* USER CODE END 4 */
 
