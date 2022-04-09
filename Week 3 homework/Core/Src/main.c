@@ -48,6 +48,7 @@ UART_HandleTypeDef huart1;
 SDRAM_HandleTypeDef hsdram1;
 
 /* USER CODE BEGIN PV */
+// global variable that is set by the interrupt when button is pressed
 volatile GPIO_PinState MyButtonPressed;
 /* USER CODE END PV */
 
@@ -102,16 +103,18 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-  // Testing the  UART
+  // Testing the UART
   /*  char data[] = "=^.^= Hello Mishizii! \r\n";
   if ( HAL_UART_Transmit(&huart1, (uint8_t*)data, sizeof(data), 0xFFFF) != HAL_OK ) {
 	  Error_Handler();
   }*/
+
   // Read initial state of button - usually would be not pressed
   MyButtonPressed = HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin);
 
   GPIO_PinState GreenLEDState = HAL_GPIO_ReadPin(LD3_GPIO_Port, LD3_Pin);
   GreenLEDState = !GreenLEDState;
+  // set the red LED to the opposite state of green LED
   HAL_GPIO_WritePin(LD4_GPIO_Port, LD4_Pin, GreenLEDState);
 
   /* USER CODE END 2 */
@@ -130,6 +133,7 @@ int main(void)
 		  }
 		  // if button is pressed, toggle the green LED on pin 13
 		  HAL_GPIO_TogglePin (LD3_GPIO_Port, LD3_Pin);
+		  // and the red LED on pin 14, in opposite direction
 		  HAL_GPIO_TogglePin (LD4_GPIO_Port, LD4_Pin);
 		  //HAL_Delay (200);
 
@@ -541,11 +545,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 // function that handles the interrupts on pin PA1 - user button on the board
-//void HandleMyButtonInterrupt(void){
+// implementation of a __weak function in the HAL
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 	if (GPIO_Pin == B1_Pin){
-		// set the global variable when button is pressed
+		// set the global variable when board button B1 is pressed
 		MyButtonPressed = GPIO_PIN_SET;
 	}
 
