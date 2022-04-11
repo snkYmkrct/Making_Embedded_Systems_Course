@@ -1,1 +1,3 @@
-# Making_Embedded_Systems_Course
+# Making Embedded Systems Course
+
+https://lms.classpert.com/classpertx/courses/making-embedded-systems/cohort
