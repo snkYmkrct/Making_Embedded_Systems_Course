@@ -7,11 +7,11 @@ Out of all the examples tested, the TouchGFX library seems to give the best "out
 So I decided to eliminate as much complexity as possible, and integrate TouchGFX in a project already created with Cube IDE. 
 
 ## Create and configure a STM32Cube project
-Create a new Stm32Cube project for the STM32F429I-DISC1 board, intialize peripherals, and generate the code. 
-In the .ioc file, disable FreeRTOS from the  Pinouts&Configuration --> Middleware section, save, and regenerate code. 
+Create a new Stm32Cube project for the **_STM32F429I-DISC1 board_**, intialize peripherals, and generate the code. 
+In the .ioc file, disable FreeRTOS from the  **Pinouts&Configuration --> Middleware** section, save, and regenerate code. 
 Build project. 
 
-In the .ioc file again:  Pinouts&Configuration --> Software Packs dropdown --> Select Components
+In the .ioc file again:  **Pinouts&Configuration --> Software Packs dropdown --> Select Components**
 
 ![SWpack](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/TouchGFX%20%26%20STM32CUBE%20Example/Images/01.png?raw=true)
 
@@ -51,7 +51,7 @@ There are compatibility issues between these repositories, so the versions used 
 
 The newly created folders need to be added to the Include Paths for the C and the C++ compilers.
 
-Project --> Properties --> C/C++ Build --> Settings -->
+**Project --> Properties --> C/C++ Build --> Settings -->**
 - MCU GCC Compiler --> Include paths
 - MCU G++ Compiler --> Include paths
 
@@ -81,7 +81,7 @@ static void MX_LTDC_Init(void)
 Now the project should build, and run on the board with no problems. 
 
 ## Initialize the Touch controller 
-In the TouchGFX --> target folder, modify _STM32TouchController.cpp_ The _Init()_ and _SampleTouch()_ methods need to be implemented. 
+In the **TouchGFX --> target** folder, modify _STM32TouchController.cpp_ The _Init()_ and _SampleTouch()_ methods need to be implemented. 
 
 I took the whole file from another project generated directly by the TouchGFX Designer app - see attached code file.  
 
