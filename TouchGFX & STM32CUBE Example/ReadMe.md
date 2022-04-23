@@ -7,7 +7,7 @@ Out of all the examples tested, the TouchGFX library seems to give the best "out
 So I decided to eliminate as much complexity as possible, and integrate TouchGFX in a project already created with Cube IDE. 
 
 ## Create and configure a STM32Cube project
-Create a new Stm32Cube project for the **_STM32F429I-DISC1 board_**, intialize peripherals, and generate the code. 
+Create a new Stm32Cube project for the **_STM32F429I-DISC1_** board, intialize peripherals, and generate the code. 
 In the .ioc file, disable FreeRTOS from the  **Pinouts&Configuration --> Middleware** section, save, and regenerate code. 
 Build project. 
 
