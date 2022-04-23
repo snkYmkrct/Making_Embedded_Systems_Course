@@ -29,7 +29,7 @@ Save and regenerate code. A new TouchGFX folder should be added to the project t
 At the moment, the project doesn’t compile anymore - it is not fully generated.
 
 ## Add the TouchGFX component
-Opening the __ApplicationTemplate.touchgfx.part__ file from the TouchGFX folder should start the TouchGFX Designer application, into the Import UI menu. Select Blank UI (no other options are available for this board) and click import. 
+Opening the _ApplicationTemplate.touchgfx.part_ file from the TouchGFX folder should start the TouchGFX Designer application, into the Import UI menu. Select Blank UI (no other options are available for this board) and click import. 
 
 Make sure to edit the blank UI screen, save the changes, and click on generate code. 
 
@@ -81,7 +81,7 @@ static void MX_LTDC_Init(void)
 Now the project should build, and run on the board with no problems. 
 
 ## Initialize the Touch controller 
-In the TouchGFX --> target folder, modify STM32TouchController.cpp, Init() and SampleTouch() methods need to be implemented. 
+In the TouchGFX --> target folder, modify _STM32TouchController.cpp_ The _Init()_ and _SampleTouch()_ methods need to be implemented. 
 
 I took the whole file from another project generated directly by the TouchGFX Designer app - see attached code file.  
 
