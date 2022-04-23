@@ -1,4 +1,4 @@
-##  F429Discovery board - Integrating TouchGFX into a STM32Cube IDE project
+#  F429Discovery board - Integrating TouchGFX into a STM32Cube IDE project
 
 For the final project, I intend to create a graphic UI on the integrated board display, that would require the use of the touch screen. I also do not intend to use any OS. 
 
@@ -6,7 +6,7 @@ Out of all the examples tested, the TouchGFX library seems to give the best "out
 
 So I decided to eliminate as much complexity as possible, and integrate TouchGFX in a project already created with Cube IDE. 
 
-### Create and configure a STM32Cube project
+## Create and configure a STM32Cube project
 Create a new Stm32Cube project for the STM32F429I-DISC1 board, inintialize peripherals, and generate the code. 
 In the .ioc file, disable FreeRTOS from the  Pinouts&Configuration --> Middleware section, save, and regenerate code. 
 Build project. 
@@ -28,7 +28,7 @@ Save and regenerate code. A new TouchGFX folder should be added to the project t
 
 At the moment, the project doesn’t compile anymore - it is not fully generated.
 
-### Add the TouchGFX component
+## Add the TouchGFX component
 Opening the ApplicationTemplate.touchgfx.part file from the TouchGFX folder should start the TouchGFX Designer application, into the Import UI menu. Select Blank UI (no other options are available for this board) and click import. 
 
 Make sure to edit the blank UI screen, save the changes, and click on generate code. 
@@ -37,13 +37,13 @@ Make sure to edit the blank UI screen, save the changes, and click on generate c
 
 The project in the Cube IDE should now be updated, and build with no errors. 
 
-### LCD and Touch drivers
+## LCD and Touch drivers
 To save time and effort, the drivers for the LCD and touch controller cand be taken from the ST BSP repositories on GitHub.
 
-Lcd controller driver - https://github.com/STMicroelectronics/stm32-ili9341/releases/tag/v1.0.2
-Touch controller driver - https://github.com/STMicroelectronics/stm32-stmpe811/releases/tag/v2.0.0
-From https://github.com/STMicroelectronics/32f429idiscovery-bsp/releases/tag/v2.1.7 : stm32f429i_discovery.h, stm32f429i_discovery.c 
-From https://github.com/STMicroelectronics/stm32-bsp-common/releases/tag/v4.0.1 : io.h, lcd.h, ts.h
+- Lcd controller driver - https://github.com/STMicroelectronics/stm32-ili9341/releases/tag/v1.0.2
+- Touch controller driver - https://github.com/STMicroelectronics/stm32-stmpe811/releases/tag/v2.0.0
+- From https://github.com/STMicroelectronics/32f429idiscovery-bsp/releases/tag/v2.1.7 : stm32f429i_discovery.h, stm32f429i_discovery.c 
+- From https://github.com/STMicroelectronics/stm32-bsp-common/releases/tag/v4.0.1 : io.h, lcd.h, ts.h
 
 There are compatibility issues between these repositories, so the versions used are not always the latest. 
 
@@ -58,7 +58,7 @@ Project --> Properties --> C/C++ Build --> Settings -->
 ![Includes](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/TouchGFX%20%26%20STM32CUBE%20Example/Images/06.png?raw=true)
 
 
-### Initialize the LCD controller 
+## Initialize the LCD controller 
 In the .ioc file, configure clock for the LCD-TFT to be 6MHz (value from the data sheet)
 
 ![CLOCK](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/TouchGFX%20%26%20STM32CUBE%20Example/Images/07.png?raw=true)
@@ -80,12 +80,12 @@ static void MX_LTDC_Init(void)
 
 Now the project should build, and run on the board with no problems. 
 
-### Initialize the Touch controller 
+## Initialize the Touch controller 
 In the TouchGFX --> target folder, modify STM32TouchController.cpp, Init() and SampleTouch() methods need to be implemented. 
 
 I took the whole file from another project generated directly by the TouchGFX Designer app - see attached code file.  
 
-### And... working example done: 
+## And... working example done: 
 https://youtu.be/bFI9StkcWds
 
 
