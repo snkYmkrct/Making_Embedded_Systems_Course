@@ -29,7 +29,7 @@ Save and regenerate code. A new TouchGFX folder should be added to the project t
 At the moment, the project doesn’t compile anymore - it is not fully generated.
 
 ## Add the TouchGFX component
-Opening the ApplicationTemplate.touchgfx.part file from the TouchGFX folder should start the TouchGFX Designer application, into the Import UI menu. Select Blank UI (no other options are available for this board) and click import. 
+Opening the __ApplicationTemplate.touchgfx.part__ file from the TouchGFX folder should start the TouchGFX Designer application, into the Import UI menu. Select Blank UI (no other options are available for this board) and click import. 
 
 Make sure to edit the blank UI screen, save the changes, and click on generate code. 
 
