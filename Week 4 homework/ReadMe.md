@@ -5,6 +5,9 @@ The screen would display different data, based on user choice, and the LED would
 
 Current version of the state table: https://docs.google.com/spreadsheets/d/1JimFYMGVc1ZfjMCN791TDpzwdjA5hTvn5mYWAqrn6kg/edit?usp=sharing
 
+Flow Chart state machine
+![FLOW](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%204%20homework/Week%204%20Homework-Flow%20Chart%20state%20machine.png?raw=true)
+
 
 
 Hardware Block Diagram
