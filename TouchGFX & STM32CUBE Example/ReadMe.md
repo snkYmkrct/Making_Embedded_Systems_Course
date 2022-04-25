@@ -2,7 +2,9 @@
 
 For the final project, I intend to create a graphic UI on the integrated board display, that would require the use of the touch screen. I also do not intend to use any OS. 
 
-Out of all the examples tested, the TouchGFX library seems to give the best "out of the box" results in regards to responsiveness and accuracy of the touch screen. But creating a project directly with the TouchGFX Designer application generates a structure of nested projects that I found very difficult to configure and use. 
+Out of all the examples tested, the TouchGFX library seems to give the best "out of the box" results in regards to responsiveness and accuracy of the touch screen. It also has a very easy to use interface, and a convenient simulator for the newly designed UI. 
+
+But creating a project directly with the TouchGFX Designer application generates a structure of nested projects that I found very difficult to configure and use. 
 
 So I decided to eliminate as much complexity as possible, and integrate TouchGFX in a project already created with Cube IDE. 
 
