@@ -20,12 +20,11 @@ eConsoleError ConsoleIoInit(void)
 eConsoleError ConsoleIoReceive(uint8_t *buffer, const uint32_t bufferLength, uint32_t *readLength)
 {
 	uint32_t i = 0;
-	uint8_t chIn[2];
-	HAL_StatusTypeDef rxStatus;
+	uint8_t chIn[1];
 
 	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE))
 	{
-		rxStatus = HAL_UART_Receive (&huart5, chIn, 1, 0xFFFF);
+		HAL_UART_Receive (&huart5, chIn, 1, 0xFFFF);
 		HAL_UART_Transmit(&huart5, (uint8_t*)chIn, 1, 0xFFFF); // echo
 		buffer[i] = chIn[0];
 		i++;
