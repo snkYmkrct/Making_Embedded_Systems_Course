@@ -5,6 +5,7 @@
 #include "console.h"
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 extern UART_HandleTypeDef huart5;
 
@@ -20,13 +21,17 @@ eConsoleError ConsoleIoInit(void)
 eConsoleError ConsoleIoReceive(uint8_t *buffer, const uint32_t bufferLength, uint32_t *readLength)
 {
 	uint32_t i = 0;
-	uint8_t chIn[1];
+	char ch;
 
 	while (__HAL_UART_GET_FLAG(&huart5, UART_FLAG_RXNE))
 	{
-		HAL_UART_Receive (&huart5, chIn, 1, 0xFFFF);
-		HAL_UART_Transmit(&huart5, (uint8_t*)chIn, 1, 0xFFFF); // echo
-		buffer[i] = chIn[0];
+		scanf("%c", &ch);
+
+		printf("%c", ch); // echo
+		fflush(stdout);
+		//HAL_UART_Receive (&huart5, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+		//HAL_UART_Transmit(&huart5, (uint8_t*)&ch, 1, HAL_MAX_DELAY); // echo
+		buffer[i] = (uint8_t)ch;
 		i++;
 	}
 
@@ -36,7 +41,9 @@ eConsoleError ConsoleIoReceive(uint8_t *buffer, const uint32_t bufferLength, uin
 
 eConsoleError ConsoleIoSendString(const char *buffer)
 {
-	HAL_UART_Transmit(&huart5, (uint8_t*)buffer, strlen(buffer), 0xFFFF);
+	printf("%s", buffer);
+	fflush(stdout);
+	//HAL_UART_Transmit(&huart5, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 	return CONSOLE_SUCCESS;
 }
 

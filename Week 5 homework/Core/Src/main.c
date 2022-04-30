@@ -74,6 +74,21 @@ static void MX_UART5_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int __io_putchar(int ch) {
+	HAL_UART_Transmit(&huart5, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+
+	return ch;
+}
+
+int __io_getchar(void) {
+	uint8_t ch = 0;
+
+	//__HAL_UART_CLEAR_OREFLAG(&huart5);
+
+	HAL_UART_Receive(&huart5, &ch, 1, HAL_MAX_DELAY);
+
+	return ch;
+}
 
 /* USER CODE END 0 */
 
@@ -100,7 +115,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  setvbuf(stdin, NULL, _IONBF, 0);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -115,10 +130,17 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Testing the UART
-  char data5[] = "\r\n   =^.^= Hello UART 5 =^.^= \r\n";
-  if ( HAL_UART_Transmit(&huart5, (uint8_t*)data5, sizeof(data5), 0xFFFF) != HAL_OK ) {
-	  Error_Handler();
-  }
+  //char data5[] = "\r\n   =^.^= Hello UART 5 =^.^= \r\n";
+  //if ( HAL_UART_Transmit(&huart5, (uint8_t*)data5, sizeof(data5), 0xFFFF) != HAL_OK ) {
+//	  Error_Handler();
+  //}
+
+  // Testing printf si scanf
+  //printf("~~~~~~~~~~~~~~~~~~  Mishizi test ~~~~~~~~~~~~~~~~~  \r\n");
+  //char c;
+  //scanf("%c", &c);
+  //printf("read value:  %c---\r\n", c);
+  //fflush(stdout);
 
   /* USER CODE END 2 */
 
