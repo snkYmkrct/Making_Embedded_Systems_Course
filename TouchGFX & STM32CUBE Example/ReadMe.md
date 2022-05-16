@@ -92,4 +92,8 @@ I took the whole file from another project generated directly by the TouchGFX De
 ## And... working example done: 
 https://youtu.be/bFI9StkcWds
 
+## Full project here:
+https://github.com/snkYmkrct/MESclass--firstExampleTouchGFX
+
+
 
