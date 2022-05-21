@@ -1,4 +1,5 @@
-
+## Exercise 8: Resource constraints 
+- STM32F429I-DISC1 Discovery board using STM32CubeIDE
 
 ### Processor memory map in Datasheet
 ![DATASH](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/processor%20datasheet%20memory%20map.png?raw=true)
@@ -84,3 +85,8 @@ int main(void)
 
 ### Test results
 ![RESULTS](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/printf%20results.png?raw=true)
+ 
+### Map file: bss variables, and heap
+![BSSHE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/bss%20variables%20and%20heap.png?raw=true)
+
+
