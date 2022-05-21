@@ -55,11 +55,17 @@ int main(void)
   printf("   Function address               | %.8p \r\n", &randomFunction);
   printf("----------------------------------|--------------\r\n");
   randomFunction();
-  char *str ;
+  extern int __bss_start__;
+  extern int __bss_end__;
+  printf("----------------------------------|--------------\r\n");
+  printf("   Bss start                      | %p\r\n", &__bss_start__);
+  printf("   Bss end                        | %p\r\n", &__bss_end__);
+  char *str, *str1 ;
   str = (char *) malloc(10);
+  str1 = (char *) malloc(10);
   printf("----------------------------------|--------------\r\n");
   printf("   Malloc'ed string               | %p\r\n", str);
-  printf("\r\n\r\n");
+  printf("   Malloc'ed string 1             | %p\r\n", str1);
 
   while (1)
   {
