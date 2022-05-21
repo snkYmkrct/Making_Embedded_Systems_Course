@@ -9,7 +9,7 @@
 ### Memory configuration in the linker file
 ![LINKFILE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/memory%20config%20in%20linker.png?raw=true)
 
-### Code
+### Test code
 
 ```sh
 
