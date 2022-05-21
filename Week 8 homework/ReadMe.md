@@ -3,9 +3,11 @@
 ### Processor memory map in Datasheet
 ![DATASH](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/processor%20datasheet%20memory%20map.png?raw=true)
  
-### Map File
-![MAP FILE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/memory%20config%20in%20map%20file.png?raw=true)
+### Memory configuration in the map file
+![MAPFILE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/memory%20config%20in%20map%20file.png?raw=true)
 
+### Memory configuration in the linker file
+![LINKFILE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/memory%20config%20in%20linker.png?raw=true)
 
 ### Code
 
