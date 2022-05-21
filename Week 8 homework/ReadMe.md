@@ -1,6 +1,10 @@
 ## Exercise 8: Resource constraints 
 - STM32F429I-DISC1 Discovery board using STM32CubeIDE
 
+
+## **TODO -- The initialized variables were all initialized with 0, so treated like the uninitialized ones, that is why they are all in .bss**
+
+
 ### Processor memory map in Datasheet
 ![DATASH](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/processor%20datasheet%20memory%20map.png?raw=true)
  
