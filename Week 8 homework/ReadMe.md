@@ -82,5 +82,5 @@ int main(void)
 
 ```
 
-### Test reults
+### Test results
 ![RESULTS](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/printf%20results.png?raw=true)
