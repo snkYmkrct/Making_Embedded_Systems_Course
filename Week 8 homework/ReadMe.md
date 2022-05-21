@@ -84,3 +84,8 @@ int main(void)
 
 ### Test results
 ![RESULTS](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/printf%20results.png?raw=true)
+ 
+### Map file: bss variables, and heap
+![BSSHE](https://github.com/snkYmkrct/Making_Embedded_Systems_Course/blob/main/Week%208%20homework/images/bss%20variables%20and%20heap.png?raw=true)
+
+
