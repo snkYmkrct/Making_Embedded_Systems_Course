@@ -1,10 +1,21 @@
 
 
-### Code
+### Computing a to the power of n
 
 ```sh
 #include <stdio.h>
 
+// Recursivity - Stack killer
+unsigned int recursive_power(unsigned int a, unsigned int n) {
+	if (n == 0) {
+		return 1;
+	}
+	else {
+		return a * recursive_power(a, n - 1);
+	}
+}
+
+// O(n) liniar implementation
 unsigned int liniar_power(unsigned int a, unsigned int n) {
 	unsigned int power = 1;
 
@@ -15,21 +26,7 @@ unsigned int liniar_power(unsigned int a, unsigned int n) {
 	return power;
 }
 
-unsigned int recursive_power(unsigned int a, unsigned int n) {
-	unsigned int power = 1;
-
-	if (n == 0) {
-		return 1;
-	}
-	power = recursive_power(a, n / 2);
-	if (n % 2 == 0) {
-		return power * power;
-	}
-	else {
-		return a * power * power;
-	}
-}
-
+// O(logn) implementation with bit shift operations
 unsigned int bit_power(unsigned int a, unsigned int n) {
 	unsigned int power = 1;
 
