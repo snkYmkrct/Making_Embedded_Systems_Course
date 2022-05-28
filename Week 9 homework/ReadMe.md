@@ -1,6 +1,6 @@
 
 
-### Code
+### Computing a to the power of n
 
 ```sh
 #include <stdio.h>
